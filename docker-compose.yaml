@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # O Banco de Dados
+  postgres:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: pagamento_db
+    ports:
+      - "5432:5432"
+
+  # O Mural de Mensagens
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_broker
+    ports:
+      - "5672:5672"   # Porta de comunicação dos serviços
+      - "15672:15672" # Porta do painel visual (para você ver as filas)
