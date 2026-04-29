@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # O Banco de Dados
+  # O banco de dados
   postgres:
     image: postgres:15
     container_name: postgres_db
@@ -12,10 +12,10 @@ services:
     ports:
       - "5432:5432"
 
-  # O Mural de Mensagens
+  # O Mural de mensagens
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq_broker
     ports:
       - "5672:5672"   # Porta de comunicação dos serviços
-      - "15672:15672" # Porta do painel visual (para você ver as filas)
+      - "15672:15672" # Porta do painel visual 
